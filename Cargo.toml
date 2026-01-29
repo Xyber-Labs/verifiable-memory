@@ -1,0 +1,65 @@
+[package]
+name = "verifiable-memory-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# For the Sparse Merkle Tree implementation
+sparse-merkle-tree = "0.5.4"
+
+# Blake2b is used as the hasher for the SMT
+blake2 = "0.10.6"
+
+# General purpose hashing and serialization
+sha2 = "0.10.6"
+hex = "0.4.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Use H256 for 256-bit hash types
+primitive-types = "0.12.2"
+rand = "0.8.5"
+chrono = { version = "0.4.38", features = ["serde"] }
+
+# Tokio is needed for the async runtime in main.rs and database_service.rs
+tokio = { version = "1", features = ["full"] }
+axum = "0.7.5"
+tower-http = { version = "0.5.2", features = ["cors"] }
+
+# New dependencies for database and environment management
+sqlx = { version = "0.7.1", features = ["runtime-async-std", "postgres", "chrono", "migrate"] }
+dotenv = "0.15.0"
+
+# Dependencies for the persistent SMT store
+anyhow = "1.0.100"
+async-trait = "0.1.89"
+
+utoipa = { version = "4.2.3", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "7.1.0", features = ["axum"] }
+
+solana-sdk = "2.2.0"
+solana-client = "2.2.0"
+solana-program = "2.2.0"
+shellexpand = "3.1"
+reqwest = { version = "0.12.4", features = ["json"] }
+bincode = "1.3"
+base64 = "0.22.1"
+
+[features]
+default = []
+
+[[bin]]
+name = "verifiable-memory-example"
+path = "src/main.rs"
+
+[[bin]]
+name = "performance_test"
+path = "src/performance_test.rs"
+
+[[bin]]
+name = "api_server"
+path = "src/bin/api_server.rs"
+
+[[bin]]
+name = "preflight"
+path = "src/bin/preflight.rs"
