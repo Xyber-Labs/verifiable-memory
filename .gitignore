@@ -1,0 +1,41 @@
+# Node modules
+/node_modules
+
+# Compilation output
+/dist
+
+# pnpm deploy output
+/bundle
+
+# Hardhat Build Artifacts
+/artifacts
+
+# Hardhat compilation (v2) support directory
+/cache
+
+# Typechain output
+/types
+
+# Hardhat coverage reports
+/coverage
+
+# Environment variables
+.env
+/.env
+
+# Target directory
+/target
+
+# Solana Program
+# Track source code, ignore build artifacts
+solana_program/target/
+solana_program/node_modules/
+solana_program/.anchor/
+solana_program/test-ledger/
+solana_program/.local/
+# Keep Cargo.lock for reproducible builds (common practice for Anchor programs)
+# solana_program/Cargo.lock
+
+# Local runtime state (should never be committed)
+.local/
+trusted_state.json
