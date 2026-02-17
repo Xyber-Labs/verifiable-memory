@@ -1,15 +1,3 @@
-# The proposed architecture:
-
-![Verifiable Database Architecture](docs/images/architecture.jpg)
-
-## Current architecture for integration with TDX and SGX
-
-![Current integration architecture](docs/images/integration.jpeg)
-
-## Future architecture for integration with TDX and SGX
-
-![Future integration architecture](docs/images/futureintegration.jpeg)
-
 ## Motivation: Verifiable Off-Chain State
 
 ## The Problem
@@ -73,29 +61,14 @@ The architecture ensures that a TEE (Trusted Execution Environment) can interact
 
 ## Architecture Overview
 
-```text
-+-----------------------------------------------------------------------------+
-|                                TEE ENCLAVE                                  |
-|                                                                             |
-|  +------------------+          (Internal Call)        +------------------+  |
-|  |                  |                POST             |                  |  |
-|  |  Client Program  |-------------------------------->| Verifiable DB    |  |
-|  |  (TEE agent)     |                                 |       API        |  |
-|  |                  |                                 |                  |  |
-|  +------------------+                                 +--------+---------+  |
-|                                                                 |      ^    |
-+-----------------------------------------------------------------|------|----+
-                                                                  |      |
-                                                            (RPC) |      | (SQL)
-                                                                  v      | R/W SMT,DATA
-                                                        +--------------+ |
-                                                        |  Blockchain  | |
-                                                        |(R/W SMT ROOT)| |
-                                                        +--------------+ v
-                                                                  +------------+
-                                                                  |  Database  |
-                                                                  +------------+
-```
+### Current architecture for integration with TDX and SGX
+
+![Current integration architecture](docs/images/integration.jpeg)
+
+### Future architecture for integration with TDX and SGX
+
+![Future integration architecture](docs/images/futureintegration.jpeg)
+
 
 The system is composed of two main pieces:
 
