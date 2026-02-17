@@ -16,7 +16,7 @@
 
 A Trusted Execution Environment (TEE) provides a secure enclave for executing code, but it cannot host a database internally. This creates a challenge: how can an application running inside a TEE (like an AI agent) interact with a database that resides in the untrusted outside world, while ensuring the data has not been tampered with?
 
-This Proof of Concept explores a solution to this problem by comparing two primary architectural approaches.
+This Proof of Concept explores a solution to this problem by comparing two primary architectural approaches
 
 ---
 
